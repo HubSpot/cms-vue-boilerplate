@@ -5,13 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "deploy": "vue-cli-service build && hs upload dist cms-vue-boilerplate",
+    "lint": "vue-cli-service lint",
+    "prettier:write": "prettier --write 'src/**/*.js' 'src/**/*.json'"
   },
+  "license": "Apache-2.0",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@hubspot/cms-cli": "^1.1.9",
+    "@hubspot/webpack-cms-plugins": "^1.1.7",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
