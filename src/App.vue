@@ -1,35 +1,29 @@
 <template>
-  <!-- <div className="cms-react-boilerplate__container">
+  <div id="app">
     <div className="spinning-logo__container">
       <SpinningLogo :src="vueLogo" alt="Vue logo" />
       <SpinningLogo :src="sprocketLogo" alt="sprocket logo" isSprocket="true" />
     </div>
     <p>Edit <code>src/App.js</code> and save to reload.</p>
     <Card :initialClickCount="moduleData.initial_count" />
-  </div> -->
-  <div id="app">
-    <!-- <img alt="Vue logo" :src="vueLogo" /> -->
-    <HelloWorld msg="Welcome to HubVue" />
-    Hello World
   </div>
 </template>
 
 <script>
-// import Card from '@/components/Card.vue';
-import HelloWorld from '@/components/HelloWorld.vue';
-// import SpinningLogo from '@/components/SpinningLogo.vue';
-// import sprocketLogo from '@/assets/sprocket.svg';
-// import vueLogo from '@/assets/logo.svg';
+import Card from '@/components/Card.vue';
+import SpinningLogo from '@/components/SpinningLogo.vue';
+import sprocketLogo from '@/assets/sprocket.svg';
+import vueLogo from './assets/logo.svg';
 
 export default {
   name: 'App',
   props: ['moduleData'],
-  // data: function() {
-  //   return {
-  //     sprocketLogo,
-  //     vueLogo,
-  //   };
-  // },
+  data: function() {
+    return {
+      sprocketLogo,
+      vueLogo,
+    };
+  },
   created: function() {
     // eslint-disable-next-line no-console
     console.log(
@@ -38,9 +32,8 @@ export default {
     );
   },
   components: {
-    // Card,
-    HelloWorld,
-    // SpinningLogo,
+    Card,
+    SpinningLogo,
   },
 };
 </script>

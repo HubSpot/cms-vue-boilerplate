@@ -1,43 +1,38 @@
 <template>
-  <img :class="imgClass" :src="src" :alt="alt" />
+  <div className="cms-vue-boilerplate-card">
+    <p>
+      {{ reasonsText }}
+    </p>
+    <button className="btn" v-on:click="increaseClickCount">
+      Click me!
+    </button>
+  </div>
 </template>
 
 <script>
+const pluralize = (n, noun, suffix) => `${n !== 1 ? 'are' : 'is'} ${n} ${noun + (n !== 1 ? suffix : '')}`;
+
 export default {
-  name: 'SpinningLogo',
-  props: ['isSprocket', 'src', 'alt'],
+  name: 'Card',
+  props: ['initialClickCount'],
+  data: function() {
+    return {
+      reasonsCount: this.initialClickCount,
+    };
+  },
   computed: {
-    imgClass: function() {
-      return this.isSprocket
-        ? 'spinning-logo spinning-logo--sprocket'
-        : 'spinning-logo';
+    reasonsText() {
+      return `There are ${
+        this.reasonsCount > 0
+          ? pluralize(this.reasonsCount, 'reason', 's')
+          : 'so many reasons'
+      } to use HubSpot CMS + Vue!`
+    }
+  },
+  methods: {
+    increaseClickCount() {
+      this.reasonsCount += 1;
     },
   },
 };
 </script>
-
-<style lang="scss">
-.spinning-logo__container {
-  flex-direction: row;
-  .spinning-logo {
-    animation: spinning-logo infinite 20s linear;
-    height: 300px;
-    &:nth-child(even) {
-      animation-direction: reverse;
-    }
-  }
-  .spinning-logo--sprocket {
-    transform-origin: 64.8% 55.4%;
-    left: -130px;
-    position: relative;
-  }
-}
-@keyframes spinning-logo {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-</style>

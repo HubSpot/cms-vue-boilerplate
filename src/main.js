@@ -11,10 +11,7 @@ const targetModulesData = document.querySelectorAll(
   '.cms-vue-boilerplate > script[type="application/json"]',
 );
 
-console.log('targetModulesData: ', targetModulesData);
-
 targetModulesData.forEach(({ dataset, textContent }) => {
-  console.log('');
   return new Vue({
     render: h =>
       h(App, {
