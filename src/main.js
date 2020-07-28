@@ -1,8 +1,8 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Vue from 'vue';
-import App from './App.vue';
-// import './index.scss';
+import App from '@/App.vue';
+import '@/index.scss';
 // import ErrorBoundary from './components/ErrorBoundary';
 
 Vue.config.productionTip = false;

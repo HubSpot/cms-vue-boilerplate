@@ -17,20 +17,18 @@ export default {
 </script>
 
 <style lang="scss">
-.spinning-logo__container {
-  flex-direction: row;
-  .spinning-logo {
-    animation: spinning-logo infinite 20s linear;
-    height: 300px;
-    &:nth-child(even) {
-      animation-direction: reverse;
-    }
+.spinning-logo {
+  animation: spinning-logo infinite 20s linear;
+  height: 200px;
+  &:nth-child(even) {
+    animation-direction: reverse;
   }
-  .spinning-logo--sprocket {
-    transform-origin: 64.8% 55.4%;
-    left: -130px;
-    position: relative;
-  }
+  margin-bottom: 50px;
+}
+.spinning-logo--sprocket {
+  height: 300px;
+  transform-origin: 64.8% 55.4%;
+  position: relative;
 }
 @keyframes spinning-logo {
   from {

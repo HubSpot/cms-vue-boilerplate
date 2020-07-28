@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div className="spinning-logo__container">
+  <div class="cms-vue-boilerplate-container">
+    <div class="spinning-logo-container">
       <SpinningLogo :src="vueLogo" alt="Vue logo" />
       <SpinningLogo :src="sprocketLogo" alt="sprocket logo" isSprocket="true" />
     </div>
@@ -13,7 +13,7 @@
 import Card from '@/components/Card.vue';
 import SpinningLogo from '@/components/SpinningLogo.vue';
 import sprocketLogo from '@/assets/sprocket.svg';
-import vueLogo from './assets/logo.svg';
+import vueLogo from '@/assets/vue.svg';
 
 export default {
   name: 'App',
@@ -39,12 +39,19 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.cms-vue-boilerplate-container {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 1rem 0 1rem 0;
+}
+
+.spinning-logo__container {
+  flex-direction: row;
 }
 </style>
