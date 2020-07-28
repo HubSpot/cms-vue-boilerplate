@@ -4,7 +4,7 @@
   "global": false,
   "help_text": "",
   "host_template_types": ["PAGE"],
-  "icon": "vue",
+  "icon": "vuejs",
   "js_assets": [],
   "label": "Vue app boilerplate",
   "other_assets": [],
