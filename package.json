@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "webpack --watch --env.autoupload --mode production",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "deploy": "yarn build && yarn upload",
-    "upload": "hs upload dist cms-vue-boilerplate",
+    "build": "rm -rf dist && webpack --mode production",
+    "deploy": "rm -rf dist && webpack --mode production && hs upload dist cms-vue-boilerplate",
     "lint": "vue-cli-service lint",
-    "prettier:write": "prettier --write 'src/**/*.js' 'src/**/*.json'"
+    "prettier:write": "prettier --write 'src/**/*.js' 'src/**/*.json'",
+    "serve": "vue-cli-service serve",
+    "watch": "rm -rf dist && webpack --watch --env.autoupload --mode production",
+    "upload": "hs upload dist cms-vue-boilerplate"
   },
   "license": "Apache-2.0",
   "dependencies": {

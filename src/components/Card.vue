@@ -10,7 +10,8 @@
 </template>
 
 <script>
-const pluralize = (n, noun, suffix) => `${n !== 1 ? 'are' : 'is'} ${n} ${noun + (n !== 1 ? suffix : '')}`;
+const pluralize = (n, noun, suffix) =>
+  `${n !== 1 ? 'are' : 'is'} ${n} ${noun + (n !== 1 ? suffix : '')}`;
 
 export default {
   name: 'Card',
@@ -68,5 +69,4 @@ export default {
     }
   }
 }
-
 </style>
