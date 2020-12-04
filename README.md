@@ -1,8 +1,7 @@
-# cms-vue-boilerplate [beta]
-Boilerplate [Vue](https://vuejs.org/) project for creating apps using modules on the HubSpot CMS
+# cms-Svelte-boilerplate [beta]
+Boilerplate [Svelte](https://Sveltejs.org/) project for creating apps using modules on the HubSpot CMS
 
-- Uses Vue version 2(currently 2.6)
-- Supports Vue SFC([Single File Components](https://vuejs.org/v2/guide/single-file-components.html))
+- Uses Svelte last stable version
 
 ## Getting Started
 
@@ -21,7 +20,7 @@ For more information on local development tools, see [Local Development Tooling:
 - Run `npm start` or `yarn start` to automatically upload your project to `defaultPortal`.
 - Create a page from default theme, or any drag-and-drop (`dnd_area`) enabled template in your portal, and add the module(see snippet below).
   ```
-  {% module "cms_vue_boilerplate" path="./cms-vue-boilerplate/modules/app" label="CMS Vue Boilerplate" %}
+  {% module "cms_Svelte_boilerplate" path="./cms-Svelte-boilerplate/modules/app" label="CMS Svelte Boilerplate" %}
   ```
 
 ### package.json scripts
