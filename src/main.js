@@ -12,7 +12,7 @@ targetModulesData.forEach(({ dataset, textContent }) => {
   return new App({
     target: root,
     props: {
-      name: 'world',
+      code: 'src/App.js',
       portalId: dataset.portalId,
       moduleData: JSON.parse(textContent),
       moduleInstance: dataset.moduleInstance,
