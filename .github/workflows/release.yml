@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: You smile you lose ${{ github.ref }}
+          release_name: Svelte Boilerplate ${{ github.ref }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
