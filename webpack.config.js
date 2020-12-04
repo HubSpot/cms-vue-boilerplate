@@ -3,7 +3,6 @@ const HubSpotAutoUploadPlugin = require('@hubspot/webpack-cms-plugins/HubSpotAut
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const hubspotConfig = ({ portal, autoupload } = {}) => {
   return {
@@ -22,15 +21,12 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
     module: {
       rules: [
         {
-          test: /\.vue$/,
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-              // the 'scss' and 'sass' values for the lang attribute to the right configs here.
-              // other preprocessors should work out of the box, no loader config like this necessary.
-              scss: 'vue-style-loader!css-loader!sass-loader',
-              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
+          test: /\.svelte$/,
+          use: {
+            loader: 'svelte-loader',
+            options: {
+              emitCss: true,
+              hotReload: false,
             },
           },
         },
@@ -42,9 +38,19 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
           },
         },
         {
+          test: /\.css$/,
+          use: [
+            /**
+             * MiniCssExtractPlugin doesn't support HMR.
+             * For developing, use 'style-loader' instead.
+             * */
+            MiniCssExtractPlugin.loader,
+            'css-loader',
+          ],
+        },
+        {
           test: /\.s[ac]ss$/i,
           use: [
-            'vue-style-loader',
             MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { url: false } },
             {
@@ -63,11 +69,11 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
       ],
     },
     resolve: {
-      extensions: ['.js', '.vue', '.json'],
       alias: {
-        vue$: 'vue/dist/vue.esm.js',
-        '@': path.resolve('src'),
+        svelte: path.resolve('node_modules', 'svelte'),
       },
+      extensions: ['.mjs', '.js', '.svelte'],
+      mainFields: ['svelte', 'browser', 'module', 'main'],
     },
     performance: {
       hints: false,
@@ -77,7 +83,7 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
         portal,
         autoupload,
         src: 'dist',
-        dest: 'cms-vue-boilerplate',
+        dest: 'cms-svelte-boilerplate',
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css',
@@ -91,7 +97,6 @@ const hubspotConfig = ({ portal, autoupload } = {}) => {
           },
         ],
       }),
-      new VueLoaderPlugin(),
     ],
   };
 };

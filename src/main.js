@@ -1,30 +1,21 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import Vue from 'vue';
-import App from '@/App.vue';
-import '@/index.scss';
-// import ErrorBoundary from './components/ErrorBoundary';
-
-Vue.config.productionTip = false;
+import App from './App.svelte';
+import './index.scss';
 
 const targetModulesData = document.querySelectorAll(
-  '.cms-vue-boilerplate > script[type="application/json"]',
+  '.cms-svelte-boilerplate > script[type="application/json"]',
 );
 
 targetModulesData.forEach(({ dataset, textContent }) => {
-  return new Vue({
-    render: h =>
-      h(App, {
-        props: {
-          portalId: dataset.portalId,
-          moduleData: JSON.parse(textContent),
-          moduleInstance: dataset.moduleInstance,
-        },
-      }),
-    data: {
+  const root = document.getElementById(`App--${dataset.moduleInstance}`);
+  return new App({
+    target: root,
+    props: {
+      name: 'world',
       portalId: dataset.portalId,
       moduleData: JSON.parse(textContent),
       moduleInstance: dataset.moduleInstance,
     },
-  }).$mount(`#App--${dataset.moduleInstance}`);
+  });
 });
