@@ -20,7 +20,7 @@ For more information on local development tools, see [Local Development Tooling:
 - Run `npm start` or `yarn start` to automatically upload your project to `defaultPortal`.
 - Create a page from default theme, or any drag-and-drop (`dnd_area`) enabled template in your portal, and add the module(see snippet below).
   ```
-  {% module "cms_Svelte_boilerplate" path="./cms-Svelte-boilerplate/modules/app" label="CMS Svelte Boilerplate" %}
+  {% module "cms_svelte_boilerplate" path="./cms-svelte-boilerplate/modules/app" label="CMS Svelte Boilerplate" %}
   ```
 
 ### package.json scripts
