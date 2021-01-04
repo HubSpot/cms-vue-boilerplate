@@ -7,7 +7,7 @@
     "deploy": "rm -rf dist && webpack --mode production && hs upload dist cms-vue-boilerplate",
     "lint": "vue-cli-service lint",
     "prettier:write": "prettier --write 'src/**/*.js' 'src/**/*.json'",
-    "start": "rm -rf dist && webpack --watch --env.autoupload --mode production",
+    "start": "rm -rf dist && webpack --watch --env autoupload --mode production",
     "upload": "hs upload dist cms-vue-boilerplate"
   },
   "license": "Apache-2.0",
