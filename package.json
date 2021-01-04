@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@hubspot/cms-cli": "^2.2.2",
-    "@hubspot/webpack-cms-plugins": "^1.1.7",
+    "@hubspot/webpack-cms-plugins": "^2.2.2",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
@@ -35,6 +35,6 @@
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.44.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.3.1"
   }
 }
