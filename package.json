@@ -16,7 +16,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@hubspot/cms-cli": "^1.1.9",
+    "@hubspot/cms-cli": "^2.2.2",
     "@hubspot/webpack-cms-plugins": "^1.1.7",
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
