@@ -1,3 +1,5 @@
+:warning: This project is no longer actively maintained and is read only :warning:
+
 # cms-vue-boilerplate [beta]
 Boilerplate [Vue](https://vuejs.org/) project for creating apps using modules on the HubSpot CMS
 
